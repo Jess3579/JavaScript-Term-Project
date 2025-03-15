@@ -1,0 +1,18 @@
+Space Game Portal Project
+-------------------------
+
+Created by: Jessica
+Date: March 2025
+
+Overview:
+This project includes three space-themed games created with HTML5, CSS3, JavaScript, and jQuery:
+1. Drag and Drop Game: A jQuery-based game where players match planets with their correct orbits.
+2. Space Shooter: A fast-paced arcade-style game where players shoot down asteroids.
+3. Memory Match: A classic card-matching game with space-themed images.
+
+Instructions:
+- Open index.html to access the game portal.
+- Click on the game links to load each game.
+
+Copyright:
+All rights reserved. The content is original and may not be copied or distributed without permission.
