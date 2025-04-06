@@ -1,18 +1,50 @@
-Space Game Portal Project
--------------------------
+== GAME GUIDE: Space Game Portal ==
 
-Created by: Jessica
-Date: March 2025
+Welcome to the Space Game Portal! This portal includes three games designed to be simple, interactive, and space-themed for all ages — especially casual gamers ages 10–30.
 
-Overview:
-This project includes three space-themed games created with HTML5, CSS3, JavaScript, and jQuery:
-1. Drag and Drop Game: A jQuery-based game where players match planets with their correct orbits.
-2. Space Shooter: A fast-paced arcade-style game where players shoot down asteroids.
-3. Memory Match: A classic card-matching game with space-themed images.
+---
 
-Instructions:
-- Open index.html to access the game portal.
-- Click on the game links to load each game.
+1. Drag and Drop Game (In Progress)
+   - **Objective:** Drag the planets and spaceships into the correct positions.
+   - **Controls:** Use your mouse to click and drag objects.
+   - **Points:** You score points for each correct placement.
+   - **Status:** This game is currently in the early development phase.
 
-Copyright:
-All rights reserved. The content is original and may not be copied or distributed without permission.
+2. Space Shooter
+   - **Objective:** Shoot down the enemy spaceships while avoiding collisions.
+   - **Controls:**
+       - Left Arrow: Move Left  
+       - Right Arrow: Move Right  
+       - Spacebar: Fire Bullet
+   - **Points:** You score 10 points for every enemy destroyed.
+   - **Game Over:** The game ends if an enemy hits your spaceship.
+
+3. Memory Match
+   - **Objective:** Match all the space-themed cards.
+   - **Controls:** Click on cards to flip and match pairs.
+   - **Points:** A point system is planned but not yet implemented.
+
+---
+
+== CURRENT ISSUES ==
+- **Drag and Drop Game:** Still in progress, only placeholder elements exist at this time.
+- **Memory Match Game:** No scoring system yet.
+- **Responsive Design:** Adjustments may still be needed for smaller screen sizes on some games.
+
+== PLANS TO RESOLVE ISSUES ==
+- Complete development and interactivity of the drag and drop game.
+- Add scoring to the Memory Match game.
+- Improve responsiveness across all screen sizes and devices.
+
+== FUTURE RELEASE PLANS ==
+- Add sound effects to all games.
+
+== CONTACT ==
+Developer: Jesica Brown  
+Email: jessicabrown3579@yahoo.com  
+School Project for CIT190 Program
+
+== COPYRIGHT ==
+© 2025 Space Game Portal by Jessica Brown. All rights reserved.  
+Do not copy, reproduce, or distribute this content without permission.  
+All assets used are either original or royalty-free.

@@ -1,0 +1,217 @@
+/* General Styling */
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+/* Header */
+header {
+    padding: 10px;
+    background-color: #1a1a2e;
+    box-shadow: 0 0 20px rgba(93, 63, 211, 0.7);
+}
+
+h1 {
+    color: #FFD700;
+    text-shadow: 0 0 15px #FFD700, 0 0 30px #ff7b00;
+}
+
+/* Game Container */
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Game Board */
+/* Game Board */
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(6, 100px); /* 6 columns by default */
+    grid-gap: 12px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .game-board {
+        grid-template-columns: repeat(4, 90px); /* 4 columns for tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .game-board {
+        grid-template-columns: repeat(3, 80px); /* 3 columns for smaller screens */
+    }
+}
+
+/* Card Styling */
+.card {
+    width: 100px;
+    height: 140px;
+    background-color: #2b2b40;
+    border: 2px solid #5d3fd3;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(93, 63, 211, 0.5);
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: transform 0.4s ease;
+    position: relative;
+}
+
+/* Card Flip Animation */
+.card .front,
+.card .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+}
+
+/* Front Face */
+.card .front {
+    background-color: #1a1a2e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotateY(180deg);
+}
+
+/* Image Size */
+.card img {
+    width: 70%; /* Keep images smaller for a better fit */
+    height: auto;
+}
+
+/* Back Face */
+.card .back {
+    background-image: url('../media/starfieldBackground.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Flip Logic */
+.card.flipped {
+    transform: rotateY(180deg);
+}
+
+/* Restart Button */
+#restart {
+    padding: 10px 20px;
+    background-color: #5d3fd3;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+#restart:hover {
+    background-color: #FFD700;
+}
+
+/* Back to Main Menu */
+#back {
+    margin-top: 10px;
+    color: #5d3fd3;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+#back:hover {
+    color: #FFD700;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #1a1a2e;
+    padding: 10px;
+    color: #5d3fd3;
+    border-top: 2px solid #5d3fd3;
+    box-shadow: 0 -4px 10px rgba(93, 63, 211, 0.5);
+    width: 100%; 
+    margin-top: 20px;
+}
+
+footer p {
+    font-size: 14px;
+    color: #ccc;
+}
+/* Modal Container */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    backdrop-filter: blur(5px);
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #1a1a2e;
+    padding: 30px;
+    width: 80%;
+    max-width: 400px;
+    margin: 10% auto;
+    border-radius: 10px;
+    color: #fff;
+    box-shadow: 0px 0px 30px rgba(93, 63, 211, 0.8);
+    text-align: center;
+    transform: scale(0.7);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* When modal is active, show and animate */
+.modal.show {
+    display: block;
+}
+
+.modal-content.show {
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* Victory Message */
+h2 {
+    font-size: 2rem;
+    color: #FFD700;
+    text-shadow: 0 0 20px #FFD700;
+}
+
+/* Modal Button */
+#playAgainBtn {
+    background-color: #5d3fd3;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    margin-top: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0px 0px 15px rgba(93, 63, 211, 0.5);
+}
+
+#playAgainBtn:hover {
+    background-color: #FFD700;
+    color: #000;
+    transform: scale(1.05);
+}

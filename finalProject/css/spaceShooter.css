@@ -1,0 +1,147 @@
+/* ✅ Global Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+    overflow-y: auto; /* ✅ Allow scrolling if content exceeds viewport */
+
+}
+
+/* ✅ Header */
+header {
+    text-align: center;
+    padding: 10px;
+    background-color: #111;
+    color: #FFD700;
+    border-bottom: 2px solid #5d3fd3;
+}
+
+/* ✅ Animated Starfield Background */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300%;
+    height: 300%;
+    background: url('../media/shooterBackground.jpg') repeat;
+    animation: stars 60s linear infinite;
+    opacity: 0.3;
+    z-index: -1;
+}
+
+@keyframes stars {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: -1000px -1000px;
+    }
+}
+
+
+/* ✅ Score Display */
+#scoreDisplay {
+    text-align: center;
+    color: #FFD700;
+    font-size: 24px;
+    text-shadow: 0 0 15px #FFD700;
+    margin-bottom: 10px;
+}
+
+/* ✅ Game Over Message */
+#gameOver {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #FFD700;
+    font-size: 48px;
+    font-weight: bold;
+    text-shadow: 0 0 20px #ff7b00, 0 0 40px #FFD700;
+}
+
+
+#startButton,
+#restartButton {
+    display: block;
+    margin: 20px auto;
+    padding: 12px 24px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #5d3fd3;
+    border: 2px solid #5d3fd3;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(93, 63, 211, 0.7);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: relative;
+    top: 0; /* ✅ Keep it responsive */
+}
+
+/* ✅ Hover Effect */
+#startButton:hover,
+#restartButton:hover {
+    background-color: #FFD700;
+    color: #000;
+}
+
+
+
+/* ✅ Canvas Fix */
+canvas {
+    display: block;
+    margin: 20px auto;
+    background-color: rgba(0, 0, 0, 0.6);
+    border: 2px solid #5d3fd3;
+    box-shadow: 0px 0px 40px rgba(93, 63, 211, 0.8);
+    width: 90%; 
+    max-width: 600px;
+    height: 500px; /* ✅ Fixed height to prevent overflow issues */
+    max-height: 70vh;
+}
+
+/* ✅ Footer */
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    background-color: #111;
+    color: #5d3fd3;
+    text-align: center;
+    padding: 10px;
+    box-shadow: 0 -2px 10px rgba(255, 215, 0, 0.4);
+}
+@media (max-width: 600px) {
+    canvas {
+        height: 400px; /* ✅ Smaller canvas on smaller screens */
+    }
+
+    #startButton,
+    #restartButton {
+        font-size: 16px;
+        padding: 10px 20px;
+        top: 5px; /* ✅ Adjust button position */
+    }
+
+    footer {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+
+footer a {
+    color: #5d3fd3;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    color: #FFD700;
+}
