@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Space Shooter</title>
+    <link rel="stylesheet" href="css/spaceShooter.css" />
+</head>
+<body>
+
+<header>
+    <h1>Space Shooter</h1>
+    <p>Use the arrow keys to move and spacebar to shoot. Avoid the enemies!</p>
+</header>
+
+
+<canvas id="gameCanvas"></canvas>
+<div id="scoreDisplay">Score: 0</div>
+<div id="gameOver" style="display: none;">GAME OVER</div>
+
+
+<button id="startButton">Start</button>
+<button id="restartButton" style="display: none;">Restart</button>
+
+
+<audio id="backgroundSound" src="media/InnerSpace.mp3" loop></audio>
+
+
+<footer>
+    <p>&copy; 2025 Space Game Portal. All rights reserved. 
+        <a href="index.html" id="back">Back to Main Menu</a> |
+        <a href="game1ReadMe.txt" id="guide">Game Guide</a>
+    </p>
+</footer>
+
+
+<script src="js/spaceShooter.js"></script>
+</body>
+</html>

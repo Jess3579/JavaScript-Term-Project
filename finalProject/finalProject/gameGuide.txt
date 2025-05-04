@@ -1,0 +1,40 @@
+== GAME GUIDE: Space Game Portal ==
+
+Welcome to the Space Game Portal! This site includes three interactive space-themed games built using HTML5, CSS3, JavaScript, and jQuery.
+
+---
+
+== Game #1: Space Shooter ==
+* Purpose: Shoot down enemy ships while avoiding collisions.  
+* Directions:  
+   Use Left/Right Arrow keys to move  
+  - Press Spacebar to shoot  
+  - Score 10 points per enemy destroyed  
+  - Game ends when an enemy hits your ship  
+* Issues: None  
+* Plans: Add more enemy types and high score tracking  
+* Copyright: 2025 Space Game Portal by Jessica Brown. All rights reserved.  
+  All graphics and sounds are royalty-free or original.
+
+---
+
+== Game #2: Rocket Journey Through the Solar System ==
+* Purpose: Learn about the planets by dragging a rocket to each one in the correct order.  
+* Directions:  
+  - Drag the rocket to each planet  
+  - A fun fact appears when dropped correctly  
+* Issues: None  
+* Plans: Add a completion message or animation  
+* Copyright: 2025 Space Game Portal by Jessica Brown. All rights reserved.  
+  All graphics and sounds are royalty-free or original.
+---
+
+== Game #3: Memory Match ==
+* Purpose: Match pairs of space-themed cards.  
+* Directions:  
+  - Click two cards to flip  
+  - Match all pairs to win  
+* Issues: No scoring system  
+* Plans: Add a timer or score tracking in a future update  
+* Copyright: 2025 Space Game Portal by Jessica Brown. All rights reserved.  
+  All graphics and sounds are royalty-free or original.

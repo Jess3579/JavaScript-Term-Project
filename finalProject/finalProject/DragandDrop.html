@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Rocket Journey Through the Solar System</title>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+  <script src="https://code.jquery.com/jquery-latest.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: url("media/starfieldBackground.jpg") repeat;
+      background-size: cover;
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+  text-align: center;
+  padding: 20px 10px;
+  background-color: rgba(0, 0, 0, 0.85);
+  border-bottom: 3px solid #5d3fd3;
+}
+
+header h1 {
+  color: #FFD700;
+  font-size: 28px;
+  margin-bottom: 5px;
+  text-shadow: 0 0 8px #FFD700;
+}
+
+header p {
+  color: #FFD700;
+  font-size: 16px;
+  text-shadow: 0 0 4px #FFD700;
+}
+
+    #gameArea {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 30px 20px;
+      position: relative;
+    }
+
+    .planet-row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 50px;
+      margin: 30px 0;
+    }
+
+    .planet-box {
+      text-align: center;
+      position: relative;
+      width: 120px;
+      height: 140px;
+    }
+
+    .planet {
+      width: 100px;
+      height: 100px;
+      z-index: 1;
+    }
+
+    .dropZone {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: transparent;
+  z-index: 0;
+  pointer-events: auto;
+}
+
+.planet-box:hover .dropZone,
+.dropZone.hovered {
+  box-shadow: 0 0 25px 8px rgba(255, 215, 0, 0.6);
+  border-radius: 50%;
+}
+
+    .planet-label {
+      margin-top: 8px;
+      font-size: 14px;
+      color: #FFD700;
+      text-shadow: 0 0 5px black;
+    }
+
+    #rocket {
+      width: 60px;
+      height: 90px;
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1000;
+      cursor: grab;
+    }
+
+    .fact-box {
+      margin-top: 20px;
+      background-color: rgba(0, 0, 0, 0.8);
+      border: 2px solid #FFD700;
+      border-radius: 10px;
+      padding: 15px 25px;
+      max-width: 600px;
+      color: #fff;
+      font-size: 16px;
+      text-align: center;
+      text-shadow: 0 0 5px #FFD700;
+      display: none;
+    }
+
+    footer {
+  background-color: rgba(0, 0, 0, 0.9);
+  color: #5d3fd3;
+  text-align: center;
+  padding: 15px 10px;
+  font-size: 16px;
+  box-shadow: 0 -2px 10px rgba(255, 215, 0, 0.4);
+}
+
+footer a {
+  color: #5d3fd3;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+footer a:hover {
+  color: #FFD700;
+  text-shadow: 0 0 6px #FFD700;
+}
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Rocket Journey Through the Solar System</h1>
+    <p>Drag the rocket to each planet in the correct order from the Sun. Fun facts will appear when you're right!</p>
+  </header>
+
+  <div id="gameArea">
+    <img id="rocket" src="media/rocket.png" alt="Rocket" />
+
+    <div class="planet-row">
+      <div class="planet-box">
+        <div class="dropZone" data-planet="Mercury"></div>
+        <img class="planet" src="media/mercury.png" alt="Mercury">
+        <div class="planet-label">Mercury</div>
+      </div>
+      <div class="planet-box">
+        <div class="dropZone" data-planet="Venus"></div>
+        <img class="planet" src="media/venus.png" alt="Venus">
+        <div class="planet-label">Venus</div>
+      </div>
+      <div class="planet-box">
+        <div class="dropZone" data-planet="Earth"></div>
+        <img class="planet" src="media/earth.png" alt="Earth">
+        <div class="planet-label">Earth</div>
+      </div>
+      <div class="planet-box">
+        <div class="dropZone" data-planet="Mars"></div>
+        <img class="planet" src="media/mars.png" alt="Mars">
+        <div class="planet-label">Mars</div>
+      </div>
+    </div>
+
+    <div class="planet-row">
+      <div class="planet-box">
+        <div class="dropZone" data-planet="Jupiter"></div>
+        <img class="planet" src="media/jupiter.png" alt="Jupiter">
+        <div class="planet-label">Jupiter</div>
+      </div>
+      <div class="planet-box">
+        <div class="dropZone" data-planet="Saturn"></div>
+        <img class="planet" src="media/saturn.png" alt="Saturn">
+        <div class="planet-label">Saturn</div>
+      </div>
+      <div class="planet-box">
+        <div class="dropZone" data-planet="Uranus"></div>
+        <img class="planet" src="media/uranus.png" alt="Uranus">
+        <div class="planet-label">Uranus</div>
+      </div>
+      <div class="planet-box">
+        <div class="dropZone" data-planet="Neptune"></div>
+        <img class="planet" src="media/neptune.png" alt="Neptune">
+        <div class="planet-label">Neptune</div>
+      </div>
+    </div>
+
+    <div id="fact" class="fact-box"></div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Space Game Portal. All rights reserved. 
+      <a href="index.html">Back to Main Menu</a> |
+      <a href="gameGuide.html">Game Guide</a>
+    </p>
+  </footer>
+
+  <script>
+    const facts = {
+      Mercury: "Mercury is the smallest planet and closest to the Sun.",
+      Venus: "Venus spins in the opposite direction of most planets.",
+      Earth: "Earth is the only planet known to support life.",
+      Mars: "Mars is called the Red Planet because of its iron-rich soil.",
+      Jupiter: "Jupiter is the largest planet and has a giant storm called the Great Red Spot.",
+      Saturn: "Saturn is famous for its beautiful rings made of ice and rock.",
+      Uranus: "Uranus rotates on its side and has a blue-green color.",
+      Neptune: "Neptune has the strongest winds in the solar system."
+    };
+  
+    const correctOrder = ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"];
+    let currentPlanetIndex = 0;
+  
+    $(function () {
+      const $rocket = $("#rocket");
+  
+      $rocket.draggable({
+        revert: "invalid"
+      });
+  
+      $(".dropZone").droppable({
+        hoverClass: "hovered",
+        accept: "#rocket",
+        drop: function (event, ui) {
+          const $box = $(this).closest('.planet-box');
+          const planet = $(this).data("planet");
+  
+          if (planet === correctOrder[currentPlanetIndex]) {
+            $rocket.appendTo("body");
+  
+            $rocket.position({
+              of: $box,
+              my: "center",
+              at: "center"
+            });
+  
+            $("#fact").hide().text(facts[planet]).fadeIn(500);
+  
+            setTimeout(() => {
+              $("#fact").fadeOut();
+            }, 8000);
+  
+            currentPlanetIndex++; // Move to next planet in sequence
+          } else {
+            $("#fact").hide().text("Not quite! Try another planet in the correct order.").fadeIn(300);
+  
+            setTimeout(() => {
+              $("#fact").fadeOut();
+            }, 5000);
+          }
+        }
+      });
+    });
+  </script>
+  </script>
+</body>
+</html>

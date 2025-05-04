@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Memory Match</title>
+  <link rel="stylesheet" href="css/spaceMemory.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="js/spaceMemory.js" defer></script>
+</head>
+<body>
+
+<header>
+  <h1>Memory Match</h1>
+  <p>Test your memory skills by matching pairs of space-themed cards!</p>
+</header>
+
+<div class="game-container">
+  <div class="game-board"></div>
+  <button id="restart">Restart Game</button>
+</div>
+
+<div id="victoryModal" class="modal">
+  <div class="modal-content">
+    <h2>🚀 Mission Complete! 🚀</h2>
+    <p>You’ve conquered the galaxy of memory!</p>
+    <button id="playAgainBtn">Play Again</button>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 2025 Space Game Portal. All rights reserved.
+    <a href="index.html" id="back">Back to Main Menu</a> |
+    <a href="gameGuide.txt">Game Guide</a>
+  </p>
+</footer>
+
+<!-- Sounds -->
+<audio id="flipSound" src="media/flip.mp3"></audio>
+<audio id="matchSound" src="media/match.mp3"></audio>
+<audio id="victorySound" src="media/victory.mp3"></audio>
+
+</body>
+</html>
